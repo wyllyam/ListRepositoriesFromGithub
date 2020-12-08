@@ -1,0 +1,8 @@
+include ':common'
+include ':presentation'
+include ':features:home'
+include ':features'
+include ':network'
+include ':common_test'
+include (":app")
+rootProject.name = "GithubRepositories"
