@@ -1,11 +1,9 @@
 package com.wyllyam.home.presenter.adapter
 
-import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.wyllyam.extension.inflate
 import com.wyllyam.home.R
-import com.wyllyam.home.databinding.ItemRepositoryBinding
 import com.wyllyam.home.presenter.model.GithubRepositoryVO
 
 internal class HomeAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -23,8 +21,7 @@ internal class HomeAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         return if (viewType == VIEW_TYPE_PAGINATE) {
             HolderLoading(parent.inflate(R.layout.item_loading))
         } else {
-            val view = ItemRepositoryBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-            return HomeViewHolder(view)
+            return HomeViewHolder(parent.inflate(R.layout.item_repository))
         }
     }
 
@@ -53,11 +50,6 @@ internal class HomeAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     fun submitList(newList: List<GithubRepositoryVO>) {
         list.addAll(newList)
         list = list.distinct().toMutableList()
-        notifyDataSetChanged()
-    }
-
-    fun clearList() {
-        list.clear()
         notifyDataSetChanged()
     }
 
