@@ -1,5 +1,5 @@
 object Modules {
-    val ui = ":ui"
+    val koin = ":koin"
     val common = ":common"
     val common_test = ":common_test"
     val network = ":network"

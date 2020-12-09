@@ -37,7 +37,6 @@ android {
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
-    implementation(Koin.koin)
     implementation(Android.lifecycleExtensions)
     implementation(Kotlin.kotlinCoroutineCore)
 
@@ -50,14 +49,6 @@ dependencies {
     api(AndroidTest.junitExt)
     api(AndroidTest.espresso)
 
-    implementation (project(Modules.common))
-//
-//    api AndroidTest.junit
-//            api AndroidTest.koinTest
-//            api AndroidTest.androidXTesting
-//            api(AndroidTest.mockk_core) { exclude module: 'objenesis' }
-//    androidTestImplementation 'org.objenesis:objenesis:3.1'
-//
-//    api AndroidTest.junitExt
-//            api AndroidTest.espresso
+    implementation(project(Modules.koin))
+    implementation(project(Modules.common))
 }

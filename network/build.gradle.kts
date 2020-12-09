@@ -43,8 +43,6 @@ androidExtensions {
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
-    api(Koin.koin)
-
     api(Retrofit.retrofit)
     implementation(Retrofit.retrofitCoroutineAdapter)
 
@@ -52,4 +50,6 @@ dependencies {
     implementation(Gson.retrofitGsonConverter)
 
     implementation(OkHttp.httpLoggingInterceptor)
+
+    implementation(project(Modules.koin))
 }

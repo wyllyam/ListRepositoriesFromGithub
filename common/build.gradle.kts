@@ -39,8 +39,9 @@ android {
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
-    implementation(Koin.koin)
     implementation(Kotlin.kotlinCoroutineCore)
+
+    implementation(project(Modules.koin))
 
     api(Android.lifecycleViewModel)
     api(Android.lifecycleExtensions)

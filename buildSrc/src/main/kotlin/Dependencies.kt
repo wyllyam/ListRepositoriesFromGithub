@@ -19,15 +19,10 @@ object Config {
 object Versions {
     val kotlin = "1.4.10"
     val gradle = "4.0.1"
-    val compileSdk = 29
-    val buildTools = "30.0.1"
-    val minSdk = 21
-    val targetSdk = 29
     val appCompat = "1.1.0"
-    val coreKtx = "1.2.0"
     val constraintLayout = "1.1.3"
     val coroutines = "1.3.3"
-    val koin = "2.0.1"
+    val koin = "2.2.1"
     val lifecycle = "2.2.0"
     val recyclerview = "1.1.0"
     val material = "1.1.0"
@@ -40,7 +35,7 @@ object Versions {
     val okHttp = "3.12.1"
     val timber = "4.7.1"
 
-    val glide = "4.11.0"
+    val coil = "1.1.0"
 
     val junit = "4.12"
     val junitExt = "1.1.1"
@@ -52,12 +47,12 @@ object Versions {
 
 object Android {
     val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
-    val coreKtx = "androidx.core:core-ktx:${Versions.coreKtx}"
     val constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
     val lifecycleViewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle}"
     val lifecycleExtensions = "androidx.lifecycle:lifecycle-extensions:${Versions.lifecycle}"
     val recyclerView = "androidx.recyclerview:recyclerview:${Versions.recyclerview}"
     val material = "com.google.android.material:material:${Versions.material}"
+    val cardView = "com.google.android.material:material:${Versions.material}"
     val swipeToRefresh = "androidx.swiperefreshlayout:swiperefreshlayout:${Versions.material}"
     val paging = "androidx.paging:paging-runtime:${Versions.paging}"
 }
@@ -65,8 +60,6 @@ object Android {
 object Kotlin {
     val kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlin}"
     val kotlinCoroutineCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines}"
-    val kotlinCoroutineAndroid =
-        "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}"
 }
 
 object AndroidTest {
@@ -80,8 +73,8 @@ object AndroidTest {
 
 object Koin {
     val koin = "org.koin:koin-android:${Versions.koin}"
-    val koinScope = "org.koin:koin-android-scope:${Versions.koin}"
-    val koinViewModel = "org.koin:koin-android-viewmodel:${Versions.koin}"
+    val koinScope = "org.koin:koin-androidx-scope:${Versions.koin}"
+    val koinViewModel = "org.koin:koin-androidx-viewmodel:${Versions.koin}"
 }
 
 object Retrofit {
@@ -102,7 +95,6 @@ object Timber {
     val timber = "com.jakewharton.timber:timber:${Versions.timber}"
 }
 
-object Glide {
-    val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
-    val glideCompiler = "com.github.bumptech.glide:compiler:${Versions.glide}"
+object Coil {
+    val coil = "io.coil-kt:coil:${Versions.coil}"
 }

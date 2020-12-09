@@ -44,20 +44,11 @@ dependencies {
 
     implementation(Android.appCompat)
     implementation(Android.material)
-    implementation(Koin.koin)
 
     implementation(project(Modules.home))
 
+    implementation(project(Modules.koin))
     implementation(project(Modules.common))
     implementation(project(Modules.common_test))
     implementation(project(Modules.network))
-
-
-//    implementation("org.jetbrains.kotlin:kotlin-stdlib:${Versions.kotlin}")
-//    implementation("androidx.core:core-ktx:1.3.2")
-//    implementation("com.google.android.material:material:1.2.1")
-//    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.2.0")
-//    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0")
-
-//    implementation(Koin.koinScope)
 }

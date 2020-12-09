@@ -15,7 +15,7 @@ internal class FetchGithubRepositoryUseCase (private val fetchGithubRepository: 
                 "Failed to execute FetchGithubRepositoryUseCase. Params must not be null."
             }
 
-            return fetchGithubRepository.fetchGithubRepositoryList(page = params.page)
+            return fetchGithubRepository.fetchGithubRepositories(page = params.page)
         }catch (e: NetworkException){
             throw FetchGithubRepositoryUseCaseException("Failed to fetch repositories list", ).also { exception ->
                 Timber.e(exception)
