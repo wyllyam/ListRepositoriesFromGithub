@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="item_repository_owner_name">Owner: %s</string>
+    <string name="item_repository_name">Repository Name: %s</string>
+    <string name="item_repository_stars">Stars: %s</string>
+    <string name="item_repository_forks">Forks: %s</string>
+</resources>

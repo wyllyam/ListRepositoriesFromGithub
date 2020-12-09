@@ -31,6 +31,10 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 androidExtensions {
@@ -40,9 +44,12 @@ androidExtensions {
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
-    implementation(Android.paging)
+    implementation(Android.cardView)
+    implementation(Android.constraintLayout)
+    implementation(Android.recyclerView)
     implementation(Timber.timber)
-    implementation(Koin.koinViewModel)
+
+    implementation(project(Modules.koin))
 
     implementation(project(Modules.common))
     implementation(project(Modules.presentation))

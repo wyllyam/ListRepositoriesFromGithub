@@ -9,7 +9,7 @@ import kotlinx.coroutines.launch
 import org.koin.core.context.GlobalContext
 
 val CoroutineScope.dispatcherProvider by lazy {
-    GlobalContext.get().koin.get<DispatcherProvider>()
+    GlobalContext.get().get<DispatcherProvider>()
 }
 
 inline fun CoroutineScope.launchIO(crossinline execution: suspend CoroutineScope.() -> Unit) {

@@ -6,5 +6,5 @@ import com.wyllyam.network.exception.NetworkException
 internal interface FetchGithubRepository {
 
     @Throws(NetworkException::class)
-    suspend fun fetchGithubRepositoryList(page: Int): GithubRepositories
+    suspend fun fetchGithubRepositories(page: Int): GithubRepositories
 }

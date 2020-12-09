@@ -5,6 +5,7 @@ import com.wyllyam.home.presenter.model.GithubRepositoryOwnerVO
 
 internal fun GithubRepositoryOwner.toPresenter(): GithubRepositoryOwnerVO {
     return GithubRepositoryOwnerVO(
+        authorName = authorName,
         authorImageUrl = authorImageUrl
     )
 }

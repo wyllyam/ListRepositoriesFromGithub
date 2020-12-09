@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivRepositoryUserImage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvRepositoryForks"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvRepositoryUserName" />
+
+        <TextView
+            android:id="@+id/tvRepositoryUserName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/item_repository_owner_name"
+            app:layout_constraintBottom_toTopOf="@+id/tvRepositoryName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/ivRepositoryUserImage"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="Owner: Google" />
+
+        <TextView
+            android:id="@+id/tvRepositoryName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/item_repository_name"
+            app:layout_constraintBottom_toTopOf="@+id/tvRepositoryStars"
+            app:layout_constraintEnd_toEndOf="@+id/tvRepositoryUserName"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/tvRepositoryUserName"
+            app:layout_constraintTop_toBottomOf="@+id/tvRepositoryUserName"
+            tools:text="Repository Name: Android" />
+
+        <TextView
+            android:id="@+id/tvRepositoryStars"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/item_repository_stars"
+            app:layout_constraintBottom_toTopOf="@+id/tvRepositoryForks"
+            app:layout_constraintEnd_toEndOf="@+id/tvRepositoryName"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/tvRepositoryUserName"
+            app:layout_constraintTop_toBottomOf="@+id/tvRepositoryName"
+            tools:text="Stars: 25318" />
+
+        <TextView
+            android:id="@+id/tvRepositoryForks"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/item_repository_forks"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tvRepositoryStars"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/tvRepositoryUserName"
+            app:layout_constraintTop_toBottomOf="@+id/tvRepositoryStars"
+            tools:text="Forks: 25318" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

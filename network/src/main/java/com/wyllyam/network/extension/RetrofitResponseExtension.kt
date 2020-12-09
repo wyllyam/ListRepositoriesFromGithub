@@ -1,39 +1,28 @@
 package com.wyllyam.network.extension
 
-import com.google.gson.Gson
-import com.wyllyam.network.base.BaseErrorResponse
-import com.wyllyam.network.base.Outcome
+import com.wyllyam.network.base.Either
 import retrofit2.Response
 import java.net.HttpURLConnection
 
-fun <R : Any> Response<R>.parseResponse(errorResponse: Class<out BaseErrorResponse> = BaseErrorResponse::class.java): Outcome<R> {
+fun <R : Any> Response<R>.parseResponse(): Either<R> {
     if (isSuccessful) {
         val body = body()
 
         if (body != null) {
-            return Outcome.Success(body)
+            return Either.Success(body)
         }
     } else {
-        return parseErrorBody(
-            this.code(),
-            errorBody()?.string() ?: "",
-            errorResponse
-        )
+        return parseErrorBody(this.code())
     }
-    return Outcome.Failure(HttpURLConnection.HTTP_INTERNAL_ERROR)
+    return Either.Failure(HttpURLConnection.HTTP_INTERNAL_ERROR)
 }
 
 internal fun parseErrorBody(
-    code: Int,
-    errorBody: String,
-    errorResponse: Class<out BaseErrorResponse>
-): Outcome.Failure {
+    code: Int
+): Either.Failure {
     return try {
-        Outcome.Failure(
-            code,
-            Gson().fromJson(errorBody, errorResponse)
-        )
+        Either.Failure(code)
     } catch (e: Exception) {
-        Outcome.Failure(HttpURLConnection.HTTP_INTERNAL_ERROR)
+        Either.Failure(HttpURLConnection.HTTP_INTERNAL_ERROR)
     }
 }
