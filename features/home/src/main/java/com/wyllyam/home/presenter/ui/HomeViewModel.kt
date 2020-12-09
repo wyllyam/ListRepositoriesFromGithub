@@ -19,11 +19,27 @@ internal class HomeViewModel(private val fetchGithubRepositoryUseCase: FetchGith
     private val _listResultRepositories = MutableLiveData<GithubRepositoriesVO>()
     val listResultRepositories = _listResultRepositories.toLiveData()
 
+    var isPaginating = false
+        internal set
+
+    var isLoading = false
+        internal set
+
+    var currentPage: Int = 0
+        private set
+
     init {
         _loadingState.postValue(LOADING)
     }
 
     fun loadRepositories(page: Int) {
+        currentPage = page
+        isLoading = true
+
+        if (page != 0) {
+            isPaginating = true
+        }
+
         launchIO {
             val viewState = try {
                 val params = FetchGithubRepositoryUseCase.Params(page = page)
@@ -31,6 +47,8 @@ internal class HomeViewModel(private val fetchGithubRepositoryUseCase: FetchGith
                 _listResultRepositories.postValue(result)
                 LOADED
             } catch (e: FetchGithubRepositoryUseCaseException) {
+                isLoading = false
+                isPaginating = false
                 Timber.e("Failed to fetch repositories")
                 ERROR
             }
