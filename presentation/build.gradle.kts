@@ -41,7 +41,6 @@ dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
     implementation(Coil.coil)
-//    implementation(Android.recyclerView)
 
     implementation(project(Modules.koin))
     implementation(project(Modules.common))

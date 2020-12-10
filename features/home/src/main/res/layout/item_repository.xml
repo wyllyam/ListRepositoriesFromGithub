@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginStart="16dp"
-    android:layout_marginEnd="16dp"
-    android:layout_marginBottom="16dp">
+    android:layout_marginStart="@dimen/base"
+    android:layout_marginEnd="@dimen/base"
+    android:layout_marginBottom="@dimen/base">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -14,21 +14,22 @@
 
         <ImageView
             android:id="@+id/ivRepositoryUserImage"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginStart="16dp"
+            android:layout_width="@dimen/ivSizeUser"
+            android:layout_height="@dimen/ivSizeUser"
+            android:layout_marginStart="@dimen/base"
             app:layout_constraintBottom_toBottomOf="@+id/tvRepositoryForks"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/tvRepositoryUserName" />
+            app:layout_constraintTop_toTopOf="@+id/tvRepositoryUserName"
+            app:srcCompat="@drawable/ic_user" />
 
         <TextView
             android:id="@+id/tvRepositoryUserName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginStart="@dimen/base"
+            android:layout_marginTop="@dimen/base"
+            android:layout_marginEnd="@dimen/base"
+            android:layout_marginBottom="@dimen/small"
             android:text="@string/item_repository_owner_name"
             app:layout_constraintBottom_toTopOf="@+id/tvRepositoryName"
             app:layout_constraintEnd_toEndOf="parent"
@@ -42,7 +43,7 @@
             android:id="@+id/tvRepositoryName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="@dimen/small"
             android:text="@string/item_repository_name"
             app:layout_constraintBottom_toTopOf="@+id/tvRepositoryStars"
             app:layout_constraintEnd_toEndOf="@+id/tvRepositoryUserName"
@@ -55,7 +56,7 @@
             android:id="@+id/tvRepositoryStars"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="@dimen/small"
             android:text="@string/item_repository_stars"
             app:layout_constraintBottom_toTopOf="@+id/tvRepositoryForks"
             app:layout_constraintEnd_toEndOf="@+id/tvRepositoryName"
@@ -68,7 +69,7 @@
             android:id="@+id/tvRepositoryForks"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="@dimen/small"
             android:text="@string/item_repository_forks"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/tvRepositoryStars"

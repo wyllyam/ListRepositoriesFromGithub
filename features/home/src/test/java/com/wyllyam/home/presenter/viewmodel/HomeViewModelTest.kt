@@ -73,7 +73,6 @@ internal class HomeViewModelTest : BaseLifecycleTest() {
             viewModel.loadRepositories(DUMMY_PAGE)
 
             verifySequence {
-                stateObserver.onChanged(ViewState.LOADING)
                 stateObserver.onChanged(ViewState.ERROR)
             }
 

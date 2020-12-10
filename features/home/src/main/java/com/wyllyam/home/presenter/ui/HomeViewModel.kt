@@ -1,7 +1,6 @@
 package com.wyllyam.home.presenter.ui
 
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.SavedStateHandle
 import com.wyllyam.BaseViewModel
 import com.wyllyam.extension.toLiveData
 import com.wyllyam.home.domain.usecase.FetchGithubRepositoriesUseCase
@@ -28,10 +27,6 @@ internal class HomeViewModel(private val fetchGithubRepositoriesUseCase: FetchGi
 
     var currentPage: Int = 0
         private set
-
-    init {
-        _loadingState.postValue(LOADING)
-    }
 
     fun loadRepositories(page: Int) {
         currentPage = page

@@ -20,14 +20,11 @@ android {
 
     buildTypes {
         getByName("release") {
-            val url = "https://api.github.com/"
-
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-            buildConfigField("String", "GITHUB_HOST", "\"${url}\"")
         }
     }
 
