@@ -1,6 +1,7 @@
 package com.wyllyam.home.presenter.ui
 
 import android.os.Bundle
+import androidx.fragment.app.viewModels
 import com.wyllyam.BaseFragment
 import com.wyllyam.extension.gone
 import com.wyllyam.extension.observe
@@ -14,7 +15,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 internal class HomeFragment : BaseFragment(R.layout.fragment_home){
 
-   private val viewModel: HomeViewModel by viewModel()
+   private val viewModel by viewModels<HomeViewModel>()
 
    private val adapter: HomeAdapter by inject(fromScope = true)
 
@@ -22,7 +23,6 @@ internal class HomeFragment : BaseFragment(R.layout.fragment_home){
 
    override fun setupView(savedInstanceState: Bundle?) {
       super.setupView(savedInstanceState)
-
       loadInitialData()
    }
 
@@ -68,8 +68,8 @@ internal class HomeFragment : BaseFragment(R.layout.fragment_home){
    }
 
    private fun loadedState() {
-      viewModel.isPaginating = false
       viewModel.isLoading = false
+      viewModel.isPaginating = false
 
       pbLoadList.gone()
       ivButtonReload.gone()
