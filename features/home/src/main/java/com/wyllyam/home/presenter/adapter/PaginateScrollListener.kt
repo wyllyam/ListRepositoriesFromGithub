@@ -36,6 +36,6 @@ internal abstract class PaginateScrollListener(val offset: Int = OFFSET) : Recyc
     abstract fun loadMore(page: Int)
 
     companion object {
-        const val OFFSET = 10
+        const val OFFSET = 5
     }
 }

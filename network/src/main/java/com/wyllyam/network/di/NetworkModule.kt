@@ -1,7 +1,6 @@
 package com.wyllyam.network.di
 
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
-import com.wyllyam.network.BuildConfig
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -21,7 +20,6 @@ val networkModule = module {
     single {
         Retrofit.Builder()
             .client(get())
-//            .baseUrl(BuildConfig.GITHUB_HOST)
             .baseUrl("https://api.github.com/")
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(CoroutineCallAdapterFactory())

@@ -1,19 +1,5 @@
-import org.gradle.api.JavaVersion
-
 object ApplicationId {
     val id = "com.wyllyam.githubrepositories"
-}
-
-object Config {
-    const val minSdk = 21
-    const val compileSdk = 30
-    const val targetSdk = 30
-
-    const val appName = "Github Repositories"
-    const val appVersionName = "1.0"
-    const val appVersionCode = 1
-
-    val javaVersion = JavaVersion.VERSION_1_8
 }
 
 object Versions {
@@ -26,7 +12,6 @@ object Versions {
     val lifecycle = "2.2.0"
     val recyclerview = "1.1.0"
     val material = "1.1.0"
-    val paging = "3.0.0-alpha09"
 
     val retrofit = "2.6.2"
     val retrofitGson = "2.6.2"
@@ -53,8 +38,6 @@ object Android {
     val recyclerView = "androidx.recyclerview:recyclerview:${Versions.recyclerview}"
     val material = "com.google.android.material:material:${Versions.material}"
     val cardView = "com.google.android.material:material:${Versions.material}"
-    val swipeToRefresh = "androidx.swiperefreshlayout:swiperefreshlayout:${Versions.material}"
-    val paging = "androidx.paging:paging-runtime:${Versions.paging}"
 }
 
 object Kotlin {

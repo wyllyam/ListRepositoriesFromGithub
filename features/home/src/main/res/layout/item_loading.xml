@@ -5,8 +5,8 @@
     android:layout_height="wrap_content">
 
     <ProgressBar
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="@dimen/pbSize"
+        android:layout_height="@dimen/pbSize"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
