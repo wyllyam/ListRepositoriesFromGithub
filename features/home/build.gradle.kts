@@ -50,4 +50,5 @@ dependencies {
     implementation(project(Modules.common))
     implementation(project(Modules.presentation))
     implementation(project(Modules.network))
+    implementation(project(Modules.common_test))
 }

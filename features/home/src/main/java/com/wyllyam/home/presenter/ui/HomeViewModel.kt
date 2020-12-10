@@ -1,16 +1,17 @@
 package com.wyllyam.home.presenter.ui
 
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.SavedStateHandle
 import com.wyllyam.BaseViewModel
 import com.wyllyam.extension.toLiveData
-import com.wyllyam.home.domain.usecase.FetchGithubRepositoryUseCase
-import com.wyllyam.home.domain.usecase.FetchGithubRepositoryUseCase.FetchGithubRepositoryUseCaseException
+import com.wyllyam.home.domain.usecase.FetchGithubRepositoriesUseCase
+import com.wyllyam.home.domain.usecase.FetchGithubRepositoriesUseCase.FetchGithubRepositoryUseCaseException
 import com.wyllyam.home.presenter.mapper.toPresenter
 import com.wyllyam.home.presenter.model.GithubRepositoriesVO
 import com.wyllyam.home.presenter.ui.HomeViewModel.ViewState.*
 import timber.log.Timber
 
-internal class HomeViewModel(private val fetchGithubRepositoryUseCase: FetchGithubRepositoryUseCase) :
+internal class HomeViewModel(private val fetchGithubRepositoriesUseCase: FetchGithubRepositoriesUseCase) :
     BaseViewModel() {
 
     private val _loadingState = MutableLiveData<ViewState>()
@@ -42,8 +43,8 @@ internal class HomeViewModel(private val fetchGithubRepositoryUseCase: FetchGith
 
         launchIO {
             val viewState = try {
-                val params = FetchGithubRepositoryUseCase.Params(page = page)
-                val result = fetchGithubRepositoryUseCase.execute(params).toPresenter()
+                val params = FetchGithubRepositoriesUseCase.Params(page = page)
+                val result = fetchGithubRepositoriesUseCase.execute(params).toPresenter()
                 _listResultRepositories.postValue(result)
                 LOADED
             } catch (e: FetchGithubRepositoryUseCaseException) {

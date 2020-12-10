@@ -3,7 +3,7 @@ package com.wyllyam.home.di
 import com.wyllyam.home.data.remote.api.Api
 import com.wyllyam.home.data.repository.FetchGithubDataRepository
 import com.wyllyam.home.data.repository.FetchGithubRepository
-import com.wyllyam.home.domain.usecase.FetchGithubRepositoryUseCase
+import com.wyllyam.home.domain.usecase.FetchGithubRepositoriesUseCase
 import com.wyllyam.home.presenter.adapter.HomeAdapter
 import com.wyllyam.home.presenter.ui.HomeFragment
 import com.wyllyam.home.presenter.ui.HomeViewModel
@@ -19,9 +19,9 @@ val homeModule = module {
 
     single<FetchGithubRepository>{ FetchGithubDataRepository(api = get()) }
 
-    factory { FetchGithubRepositoryUseCase(fetchGithubRepository = get()) }
+    factory { FetchGithubRepositoriesUseCase(repository = get()) }
 
-    viewModel { HomeViewModel(fetchGithubRepositoryUseCase = get()) }
+    viewModel { HomeViewModel(fetchGithubRepositoriesUseCase = get()) }
 
     scope(named<HomeFragment>()){
         scoped { HomeAdapter() }
